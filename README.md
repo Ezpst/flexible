@@ -1,6 +1,3 @@
----
-grammar_cjkRuby: true
----
 
 ## flexible
 ***
@@ -17,9 +14,9 @@ grammar_cjkRuby: true
 
 使用sass预处理器来快速转换
 
-借助 [Koala][1] 对sass进行编译    ==注：一定要安装在C盘，不然会编译失败，亲测==
+借助 [Koala][1] 对sass进行编译   `注：一定要安装在C盘，不然会编译失败，亲测`
 
-==如果要在 .scss 文件中写中文注释，在文件内添加 @charset "utf-8";==
+`如果要在 .scss 文件中写中文注释，在文件内添加 @charset "utf-8";`
 
  1. px —> rem
  
@@ -46,7 +43,7 @@ grammar_cjkRuby: true
  ```
  
  
- > **文本字号不推荐使用==rem==**
+ > **文本字号不推荐使用`rem`**
 
 我们在iPhone3G和iPhone4的Retina屏下面，希望看到的文本字号是相同的。也就是说，我们不希望文本在Retina屏幕下变小，另外，我们希望在大屏手机上看到更多文本，以及，现在绝大多数的字体文件都自带一些点阵尺寸，通常是16px和24px，所以我们不希望出现13px和15px这样的奇葩尺寸。
 
