@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+$design-width: 750 !default;
+@function rem($px) {
+  @return $px / $design-width * 10 + rem; // $design-width的值以设计图尺寸为准
+}
+
+@function px2em($px, $base-font-size: 16px) {
+  @if (unitless($px)) {
+    @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+    @return px2em($px + 0px);
+  }
+  @else if (unit($px)==em) {
+    @return $px;
+  }
+  @return ($px / $base-font-size) * 1em;
+}
+
+// @function rem($px, $base-font-size: 75px) { /*设计稿宽度为750，因此此处为75*/
+//   @if (unitless($px)) {
+//     @return rem($px + 0px); 
+//   } @else if (unit($px) == rem) {
+//     @return $px;
+//   }
+//   @return ($px / $base-font-size) * 1rem;
+// }
+
+// 只是针对于描述性的文本，比如说段落文本
+// @include font-dpr(16px);  在开发中这样使用
+@mixin font-dpr($font-size){
+  font-size: $font-size;
+
+  [data-dpr="2"] & {
+      font-size: $font-size * 2;
+  }
+
+  [data-dpr="3"] & {
+      font-size: $font-size * 3;
+  }
+}
